@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:prevencionDiabetes"
         mc:Ignorable="d"
-        Title="MainWindow" ResizeMode="NoResize" Height="450" Width="800">
+        Title="MainWindow" ResizeMode="NoResize" Height="483" Width="1051">
     <Grid>
          <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
