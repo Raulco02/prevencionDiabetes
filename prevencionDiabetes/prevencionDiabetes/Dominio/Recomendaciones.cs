@@ -56,10 +56,16 @@ namespace prevencionDiabetes.Dominio
                     Console.WriteLine("Bajo riesgo de diabetes. Sigue manteniendo hábitos saludables.");
                     break;
                 case 1:
-                    Console.WriteLine("Moderado riesgo de diabetes. Se recomienda hacer cambios en el estilo de vida y visitar al médico.");
+                    Console.WriteLine("Ligeramente elevado riesgo de diabetes. Se recomienda hacer cambios en el estilo de vida y visitar al médico.");
                     break;
                 case 2:
+                    Console.WriteLine("Moderado riesgo de diabetes. Es importante hacer cambios inmediatos en el estilo de vida y visitar al médico.");
+                    break;
+                case 3:
                     Console.WriteLine("Alto riesgo de diabetes. Es importante hacer cambios inmediatos en el estilo de vida y visitar al médico.");
+                    break;
+                case 4:
+                    Console.WriteLine("Muy alto riesgo de diabetes. Es importante hacer cambios inmediatos en el estilo de vida y visitar al médico.");
                     break;
                 default:
                     Console.WriteLine("Error al hacer la predicción.");
