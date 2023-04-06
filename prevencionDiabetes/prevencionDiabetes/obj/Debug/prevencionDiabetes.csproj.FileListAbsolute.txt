@@ -38,3 +38,47 @@ C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDia
 C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.csproj.CopyComplete
 C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.exe
 C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.pdb
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.csproj.AssemblyReference.cache
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.csproj.SuggestedBindingRedirects.cache
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\Login.g.cs
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\MainWindow.g.cs
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\Registro.g.cs
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\App.g.cs
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes_Content.g.cs
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes_MarkupCompile.cache
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes_MarkupCompile.lref
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.exe
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.pdb
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\Accord.dll.config
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\prevencionDiabetes.exe.config
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\prevencionDiabetes.exe
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\prevencionDiabetes.pdb
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\Accord.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\Accord.IO.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\Accord.MachineLearning.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\Accord.Math.Core.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\Accord.Math.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\Accord.Statistics.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\EntityFramework.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Data.SQLite.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\Accord.xml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\Accord.IO.xml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\Accord.MachineLearning.xml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\Accord.Math.xml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\Accord.Math.Core.xml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\Accord.Statistics.xml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\EntityFramework.xml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Data.SQLite.xml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\Login.baml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\MainWindow.baml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\Registro.baml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.g.resources
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.Properties.Resources.resources
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.csproj.GenerateResource.cache
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.csproj.CoreCompileInputs.cache
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.csproj.CopyComplete

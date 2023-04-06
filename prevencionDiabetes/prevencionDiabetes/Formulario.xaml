@@ -1,0 +1,47 @@
+﻿<Window x:Class="prevencionDiabetes.Formulario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:prevencionDiabetes"
+        mc:Ignorable="d"
+        Title="Formulario" ResizeMode="NoResize" Height="483" Width="1051" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Resultados:" HorizontalAlignment="Left" Margin="14,318,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="37" Width="128"/>
+        <Label Content="Actividad física" HorizontalAlignment="Left" Margin="363,104,0,0" VerticalAlignment="Top" Height="26" Width="89"/>
+        <Label Content="Antecedentes familiares de diabetes" HorizontalAlignment="Left" Margin="653,10,0,0" VerticalAlignment="Top" Height="26" Width="201"/>
+        <Label Content="Antecedentes de hiperglucemia" HorizontalAlignment="Left" Margin="274,59,0,0" VerticalAlignment="Top" Height="26" Width="178"/>
+        <Label Content="Padres o hermanos" HorizontalAlignment="Left" Margin="859,117,0,0" VerticalAlignment="Top" Height="26" Width="111"/>
+        <Label Content="Altura" HorizontalAlignment="Left" Margin="14,260,0,0" VerticalAlignment="Top" Height="26" Width="42"/>
+        <Label Content="Peso" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="35" Margin="20,0,0,0"/>
+        <Label Content="Abuelos, tíos o primos" HorizontalAlignment="Left" Margin="859,52,0,0" VerticalAlignment="Top" Height="26" Width="128"/>
+        <Label Content="Medicación presión arterial" HorizontalAlignment="Left" Margin="298,14,0,0" VerticalAlignment="Top" Height="26" Width="154"/>
+        <Label Content="Consumo diario de frutas o verduras" HorizontalAlignment="Left" Margin="249,189,0,0" VerticalAlignment="Top" Height="26" Width="203"/>
+        <Label Content="Edad" HorizontalAlignment="Left" Margin="20,55,0,0" VerticalAlignment="Top" Height="26" Width="36"/>
+        <Label Content="Sexo" HorizontalAlignment="Left" Margin="20,14,0,0" VerticalAlignment="Top" Height="26" Width="35"/>
+        <Button x:Name="btnSexoHombre" Content="Hombre" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="76" FontWeight="Bold" Margin="72,10,0,0"/>
+        <Button x:Name="btnSexoMujer" Content="Mujer" HorizontalAlignment="Left" Margin="154,10,0,0" VerticalAlignment="Top" Height="34" Width="76" FontWeight="Bold"/>
+        <Button x:Name="btnEdadMenos45" Content="&lt;45                               0" HorizontalAlignment="Left" Margin="72,56,0,0" VerticalAlignment="Top" Height="34" Width="158" FontWeight="Bold"/>
+        <Button x:Name="btnEdadEntre45y54" Content="45-54                          +2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="158" FontWeight="Bold" Margin="72,95,0,0"/>
+        <Button x:Name="btnEdadEntre55y64" Content="55-64                         +3" HorizontalAlignment="Left" Margin="72,134,0,0" VerticalAlignment="Top" Height="34" Width="158" FontWeight="Bold"/>
+        <Button x:Name="btnEdadMas65" Content="&gt;64                            +4" HorizontalAlignment="Left" Margin="72,173,0,0" VerticalAlignment="Top" Height="34" Width="158" FontWeight="Bold"/>
+        <TextBox x:Name="txtPeso" HorizontalAlignment="Left" Margin="72,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="158" Height="26"/>
+        <TextBox x:Name="txtAltura" HorizontalAlignment="Left" Margin="72,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Height="26"/>
+        <Label Content="kg" HorizontalAlignment="Left" Margin="207,0,0,0" VerticalAlignment="Center" Height="26" Width="23"/>
+        <Label Content="cm" HorizontalAlignment="Left" Margin="204,260,0,0" VerticalAlignment="Top" Height="26" Width="26"/>
+        <Button x:Name="btnAntecedentesHiperglucemiaNo" Content="No         0" HorizontalAlignment="Left" Margin="472,56,0,0" VerticalAlignment="Top" Height="34" Width="76" FontWeight="Bold"/>
+        <Button x:Name="btnAntecedentesHiperglucemiaSi" Content="Si        +5" HorizontalAlignment="Left" Margin="553,56,0,0" VerticalAlignment="Top" Height="34" Width="76" FontWeight="Bold"/>
+        <Button x:Name="btnMedicacionArterialNo" Content="No         0" HorizontalAlignment="Left" Margin="472,10,0,0" VerticalAlignment="Top" Height="34" Width="76" FontWeight="Bold"/>
+        <Button x:Name="btnMedicacionArterialSi" Content="Si        +2" HorizontalAlignment="Left" Margin="553,10,0,0" VerticalAlignment="Top" Height="34" Width="76" FontWeight="Bold"/>
+        <Button x:Name="btnActividadFisicaMas4h" Content="&gt;=4h/sem                       0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="157" FontWeight="Bold" Margin="472,101,0,0"/>
+        <Button x:Name="btnActividadFisicaMenos4h" Content="&lt;4h/sem                       +2" HorizontalAlignment="Left" Margin="472,139,0,0" VerticalAlignment="Top" Height="34" Width="157" FontWeight="Bold"/>
+        <Button x:Name="btnNoConsumoFrutas" Content="No        +1" HorizontalAlignment="Left" Margin="472,185,0,0" VerticalAlignment="Top" Height="34" Width="76" FontWeight="Bold"/>
+        <Button x:Name="btnSiConsumoFrutas" Content="Si          0" HorizontalAlignment="Left" Margin="553,185,0,0" VerticalAlignment="Top" Height="34" Width="76" FontWeight="Bold"/>
+        <Button x:Name="btnNoAntecedentesDiabetes" Content="No                                  0" HorizontalAlignment="Left" Margin="859,14,0,0" VerticalAlignment="Top" Height="34" Width="156" FontWeight="Bold"/>
+        <Button x:Name="btnPrimosAntecedentesDiabetes" Content="Si                                +3" HorizontalAlignment="Left" Margin="859,73,0,0" VerticalAlignment="Top" Height="34" Width="156" FontWeight="Bold"/>
+        <Button x:Name="btnPadresAntecedentesDiabetes" Content="Si                                +5" HorizontalAlignment="Left" Margin="859,139,0,0" VerticalAlignment="Top" Height="34" Width="156" FontWeight="Bold"/>
+    </Grid>
+</Window>

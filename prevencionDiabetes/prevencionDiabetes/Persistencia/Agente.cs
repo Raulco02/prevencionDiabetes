@@ -15,7 +15,7 @@ namespace prevencionDiabetes.Persistencia
 
         private Agente()
         {
-            conexion = new SQLiteConnection("Data Source=database.sqlite");
+            conexion = new SQLiteConnection("Data Source=database.sqlite;Version=3");
         }
 
         public static Agente ObtenerAgente()

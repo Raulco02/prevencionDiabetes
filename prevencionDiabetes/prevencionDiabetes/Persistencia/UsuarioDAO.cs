@@ -16,16 +16,15 @@ namespace prevencionDiabetes.Persistencia
         {
             agente = Agente.ObtenerAgente();
         }
-        public Usuario Leer(string id_usuario)
+        public Usuario Leer(string nombre_usuario)
         {
             Usuario usuario = null;
-            DataTable usuarioSet = agente.Leer($"SELECT * FROM usuarios WHERE id_usuario = {id_usuario}");
+            DataTable usuarioSet = agente.Leer($"SELECT * FROM usuarios WHERE nombre_usuario = {nombre_usuario}");
             if (usuarioSet.Rows.Count > 0)
             {
                 DataRow fila = usuarioSet.Rows[0];
                 usuario = new Usuario()
                 {
-                    Id = fila["id"].ToString(),
                     Correo = fila["correo"].ToString(),
                     Nombre_usuario = fila["nombre_usuario"].ToString(),
                     Contrasena = fila["contrasena"].ToString()
@@ -41,7 +40,6 @@ namespace prevencionDiabetes.Persistencia
             foreach (DataRow row in usuarioSet.Rows)
             {
                 Usuario usuario = new Usuario();
-                usuario.Id = row["id"].ToString();
                 usuario.Correo = row["correo"].ToString();
                 usuario.Nombre_usuario = row["nombre_usuario"].ToString();
                 usuario.Contrasena = row["contrasena"].ToString();
@@ -52,8 +50,8 @@ namespace prevencionDiabetes.Persistencia
 
         public bool Insertar(Usuario usuario)
         {
-            string consulta = "INSERT INTO usuarios (id, correo, nombre_usuario, contrasena) " +
-                              "VALUES (" + usuario.Id + ", '" + usuario.Correo + "', '" + usuario.Nombre_usuario + "', '" + usuario.Contrasena +  "')";
+            string consulta = "INSERT INTO usuarios (correo, nombre_usuario, contrasena) " +
+                              "VALUES ('" + usuario.Correo + "', '" + usuario.Nombre_usuario + "', '" + usuario.Contrasena +  "')";
             return agente.Modificar(consulta);
         }
         public bool Modificar(Usuario usuario)
@@ -62,14 +60,14 @@ namespace prevencionDiabetes.Persistencia
                           "correo = '" + usuario.Correo + "', " +
                           "nombre_usuario = '" + usuario.Nombre_usuario + "', " +
                           "contrasena = '" + usuario.Contrasena + "'" +
-                          "WHERE id = " + usuario.Id;
-
+                          "WHERE nombre_usuario = " + usuario.Nombre_usuario;
+           
             return agente.Modificar(consulta);
         }
 
         public bool Eliminar(Usuario usuario)
         {
-            string consulta = "DELETE FROM usuarios WHERE id = " + usuario.Id;
+            string consulta = "DELETE FROM usuarios WHERE nombre_usuario = " + usuario.Nombre_usuario;
             return agente.Modificar(consulta);
         }
     }
