@@ -82,3 +82,21 @@ C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevenc
 C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.csproj.GenerateResource.cache
 C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.csproj.CoreCompileInputs.cache
 C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.csproj.CopyComplete
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\obj\Debug\Login.g.cs
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\obj\Debug\Registro.g.cs
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\obj\Debug\Login.baml
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\obj\Debug\Registro.baml
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Buffers.dll
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Memory.dll
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Buffers.xml
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Memory.xml
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Threading.Tasks.Extensions.xml

@@ -1,0 +1,8 @@
+edad;sexo;IMC;cintura;medicacionPA;actHipoglucemia;actFisica;consumoFrutasVerduras;antFamiliares;puntosFindrisk;resultado
+45;false;30;95;true;false;false;true;0;12;2
+38;true;25;82;false;true;true;false;1;11;1
+52;false;28;102;false;false;true;true;2;12;2
+29;true;20;70;false;false;false;false;0;4;0
+61;false;32;100;true;true;false;false;2;22;4
+40;true;27;85;false;true;true;true;1;9;1
+45;false;28;95;true;false;true;false;2;15;3

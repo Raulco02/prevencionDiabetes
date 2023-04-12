@@ -25,7 +25,7 @@ namespace prevencionDiabetes.Dominio
                         bool sexo, int edad, double peso, double altura, int cintura, bool medicacionPa,
                         bool actHipoglucemia, bool actFisica, bool consumoFyv, int antFamiliares,
                         string resultado)
-                        : base(id, correo, nombreUsuario, contrasena)
+                        : base(correo, nombreUsuario, contrasena)
         {
             Sexo = sexo;
             Edad = edad;

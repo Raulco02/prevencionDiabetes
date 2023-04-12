@@ -7,12 +7,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Accord.IO;
-using Accord.MachineLearning;
-using Accord.MachineLearning.DecisionTrees.Learning;
-using Accord.MachineLearning.DecisionTrees;
 using Accord.Statistics.Models.Regression;
 using Accord.Math;
+using System.Data;
 
 namespace prevencionDiabetes.Dominio
 {
@@ -65,11 +62,34 @@ namespace prevencionDiabetes.Dominio
         {
             // Crear un objeto CsvReader
             var csv = new CsvReader(new StreamReader("datos.csv"), hasHeaders: true, delimiter: ';');
+            var csvContent = csv.ReadToEnd();
+            var data = new DataTable();
+            var columnas = new[] { "edad", "sexo", "IMC", "cintura", "medicacionPA", "actHipoglucemia", "actFisica", "consumoFrutasVerduras", "antFamiliares", "puntosFindrisk", "resultado" };//riesgoDiabetes no sé si debería estar
 
-            var data = csv.ToTable();
+            foreach (var header in columnas)
+            {
+                data.Columns.Add(header);
+            }
+            foreach (var matriz in csvContent)
+            {
+                List<double> list = new List<double>();
+                foreach (var item in matriz)
+                {
+                    if (double.TryParse(item, out double doubleValue))//Double.ParseDouble(item)
+                        list.Add(doubleValue);
+                    else
+                    {
+                        double valorBool = item.ToLower() == "true" ? 1.0 : 0.0;
+                        list.Add(valorBool);
+                    }
+                }
+                data.Rows.Add(list.ToArray());
+            }
+                            
+            //var data = csvContent.ToTable();
 
             // Definir los nombres de las columnas de entrada y salida
-            var inputs = new[] { "edad", "sexo", "IMC", "cintura", "medicacionPA", "actHipoglucemia", "actFisica", "consumoFrutasVerduras", "antFamiliares", "puntosFindrisk" };//riesgoDiabetes no sé si debería estar
+            var inputs = new[] { "edad", "sexo", "IMC", "cintura", "medicacionPA", "actHipoglucemia", "actFisica", "consumoFrutasVerduras", "antFamiliares", "puntosFindrisk", "resultado" };//riesgoDiabetes no sé si debería estar
             var outputIndex = inputs.Length;
             var variables = inputs.Select(v => new DecisionVariable(v, DecisionVariableKind.Continuous)).ToList();
 
@@ -79,7 +99,7 @@ namespace prevencionDiabetes.Dominio
             // Entrenar el modelo
             var learner = new C45Learning(tree);
             var inputsData = data.ToJagged(inputs);
-            var outputData = data.ToArray<int>(inputs[outputIndex]);
+            var outputData = data.ToArray<int>(inputs[outputIndex-1]);//CUIDADO SI RESULTADO TIENE QUE ESTAR EN INPUTS O NO
             //var weights = null; // Puedes usar pesos si tienes un conjunto de datos desbalanceado
             learner.Learn(inputsData, outputData);//, weights);
 

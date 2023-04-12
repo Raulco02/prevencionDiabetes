@@ -39,9 +39,11 @@ namespace prevencionDiabetes
                 MainWindow ventana_formulario = new MainWindow();
                 ventana_formulario.Show();
                 this.Close();
-            } else
+            }
+            else
             {
                 lblError.Content = "Rellene todos los campos";
             }
+        }
     }
 }

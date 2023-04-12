@@ -26,7 +26,6 @@ namespace prevencionDiabetes.Persistencia
                 DataRow fila = pacienteSet.Rows[0];
                 paciente = new Paciente()
                 {
-                    Id = fila["id"].ToString(),
                     Correo = fila["correo"].ToString(),
                     Nombre_usuario = fila["nombre_usuario"].ToString(),
                     Contrasena = fila["contrasena"].ToString(),
@@ -52,7 +51,6 @@ namespace prevencionDiabetes.Persistencia
             foreach (DataRow row in pacienteSet.Rows)
             {
                 Paciente paciente = new Paciente();
-                paciente.Id = row["id"].ToString();
                 paciente.Correo = row["correo"].ToString();
                 paciente.Nombre_usuario = row["nombre_usuario"].ToString();
                 paciente.Contrasena = row["contrasena"].ToString();
@@ -74,14 +72,14 @@ namespace prevencionDiabetes.Persistencia
 
         public bool Insertar(Paciente paciente)
         {
-            string consulta = "INSERT INTO pacientes (id, correo, nombre_usuario, contrasena, sexo, edad, peso, altura, cintura,  medicacion_pa, act_hipoglucemia, act_fisica, consumo_fyv, ant_familiares, resultado) " +
-                              "VALUES (" + paciente.Id + ", '" + paciente.Correo + "', '" + paciente.Nombre_usuario + "', '" + paciente.Contrasena + "', " +
+            string consulta = "INSERT INTO pacientes (correo, nombre_usuario, contrasena, sexo, edad, peso, altura, cintura,  medicacion_pa, act_hipoglucemia, act_fisica, consumo_fyv, ant_familiares, resultado) " +
+                              "VALUES ('" + paciente.Correo + "', '" + paciente.Nombre_usuario + "', '" + paciente.Contrasena + "', " +
                               (paciente.Sexo ? "1" : "0") + ", " + paciente.Edad + ", " + paciente.Peso + ", " + paciente.Altura + ", " + ", " + paciente.Cintura + ", " +
                               (paciente.MedicacionPA ? "1" : "0") + ", " + (paciente.ActHipoglucemia ? "1" : "0") + ", " +
                               (paciente.ActFisica ? "1" : "0") + ", " + (paciente.ConsumoFYV ? "1" : "0") + ", " + paciente.AntFamiliares + ", '" + paciente.Resultado + "')";
             return agente.Modificar(consulta);
         }
-        public bool Modificar(Paciente paciente)
+        /*public bool Modificar(Paciente paciente)
         {
             string consulta = "UPDATE pacientes SET " +
                           "correo = '" + paciente.Correo + "', " +
@@ -98,16 +96,16 @@ namespace prevencionDiabetes.Persistencia
                           "consumo_fyv = " + (paciente.ConsumoFYV ? "1" : "0") + ", " +
                           "ant_familiares = " + paciente.AntFamiliares + ", " +
                           "resultado = '" + paciente.Resultado + "'" +
-                          "WHERE id = " + paciente.Id;
+                          "WHERE id = " + paciente.Id; //Por qué atributo buscamos?
 
             return agente.Modificar(consulta);
         }
-
+        
         public bool Eliminar(Paciente paciente)
         {
-            string consulta = "DELETE FROM pacientes WHERE id = " + paciente.Id;
+            string consulta = "DELETE FROM pacientes WHERE id = " + paciente.Id; //Por qué atributo buscamos?
             return agente.Modificar(consulta);
-        }
+        }*/
     }
 }
 
