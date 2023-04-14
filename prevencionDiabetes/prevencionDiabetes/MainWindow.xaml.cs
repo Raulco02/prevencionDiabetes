@@ -161,8 +161,9 @@ namespace prevencionDiabetes
                 paciente.Cintura = int.Parse(txtCintura.Text);
                 CalculoFindrisk calculo = new CalculoFindrisk(paciente);
                 int puntos = calculo.calcularPuntos();
-                calculo.obtenerRecomendaciones();
+                int recomendacion = calculo.obtenerRecomendaciones();
                 tbPuntuacion.Text = puntos.ToString();
+                tbRecomendacion.Text = recomendacion.ToString();
                 //Faltaría poner las recomendaciones también
                 //Y de aquí habría que llamar a un método de paciente para escribir en la base de datos
             }

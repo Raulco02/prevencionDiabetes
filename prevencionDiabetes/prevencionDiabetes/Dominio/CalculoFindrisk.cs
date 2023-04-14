@@ -58,7 +58,7 @@ namespace prevencionDiabetes.Dominio
         {
             return paciente.Peso / Math.Pow(paciente.Altura/100, 2);
         }
-        public void obtenerRecomendaciones()
+        public int obtenerRecomendaciones()
         {
             // Crear un objeto CsvReader
             var csv = new CsvReader(new StreamReader("datos.csv"), hasHeaders: true, delimiter: ';');
@@ -137,6 +137,7 @@ namespace prevencionDiabetes.Dominio
                     Console.WriteLine("Error al hacer la predicción.");
                     break;
             }
+            return prediction;
         }
     }
 }
