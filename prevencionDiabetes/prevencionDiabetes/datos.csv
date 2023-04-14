@@ -6,3 +6,4 @@ edad;sexo;IMC;cintura;medicacionPA;actHipoglucemia;actFisica;consumoFrutasVerdur
 61;false;32;100;true;true;false;false;2;22;4
 40;true;27;85;false;true;true;true;1;9;1
 45;false;28;95;true;false;true;false;2;15;3
+45;true;30;95;false;false;false;true;2;16;3

@@ -56,7 +56,7 @@ namespace prevencionDiabetes.Dominio
         }
         public double calcularIMC()
         {
-            return paciente.Peso / Math.Pow(paciente.Altura, 2);
+            return paciente.Peso / Math.Pow(paciente.Altura/100, 2);
         }
         public void obtenerRecomendaciones()
         {
@@ -68,28 +68,28 @@ namespace prevencionDiabetes.Dominio
 
             foreach (var header in columnas)
             {
-                data.Columns.Add(header);
+                data.Columns.Add(header, typeof(Double));
             }
             foreach (var matriz in csvContent)
             {
-                List<double> list = new List<double>();
-                foreach (var item in matriz)
+                var row = data.NewRow(); // Crear una nueva fila con la estructura de la tabla
+                for (int i = 0; i < matriz.Length; i++)
                 {
-                    if (double.TryParse(item, out double doubleValue))//Double.ParseDouble(item)
-                        list.Add(doubleValue);
+                    if (Double.TryParse(matriz[i], out double doubleValue))
+                        row[i] = doubleValue; // Asignar el valor a la columna correspondiente en la fila
                     else
                     {
-                        double valorBool = item.ToLower() == "true" ? 1.0 : 0.0;
-                        list.Add(valorBool);
+                        Double valorBool = matriz[i].ToLower() == "true" ? 1.0 : 0.0;
+                        row[i] = valorBool; // Asignar el valor a la columna correspondiente en la fila
                     }
                 }
-                data.Rows.Add(list.ToArray());
+                data.Rows.Add(row); // Agregar la fila a la tabla
             }
                             
             //var data = csvContent.ToTable();
 
             // Definir los nombres de las columnas de entrada y salida
-            var inputs = new[] { "edad", "sexo", "IMC", "cintura", "medicacionPA", "actHipoglucemia", "actFisica", "consumoFrutasVerduras", "antFamiliares", "puntosFindrisk", "resultado" };//riesgoDiabetes no sé si debería estar
+            var inputs = new[] { "edad", "sexo", "IMC", "cintura", "medicacionPA", "actHipoglucemia", "actFisica", "consumoFrutasVerduras", "antFamiliares", "puntosFindrisk" };//riesgoDiabetes no sé si debería estar
             var outputIndex = inputs.Length;
             var variables = inputs.Select(v => new DecisionVariable(v, DecisionVariableKind.Continuous)).ToList();
 
@@ -99,21 +99,21 @@ namespace prevencionDiabetes.Dominio
             // Entrenar el modelo
             var learner = new C45Learning(tree);
             var inputsData = data.ToJagged(inputs);
-            var outputData = data.ToArray<int>(inputs[outputIndex-1]);//CUIDADO SI RESULTADO TIENE QUE ESTAR EN INPUTS O NO
+            var outputData = data.ToArray<int>(columnas[outputIndex]);//CUIDADO SI RESULTADO TIENE QUE ESTAR EN INPUTS O NO
             //var weights = null; // Puedes usar pesos si tienes un conjunto de datos desbalanceado
             learner.Learn(inputsData, outputData);//, weights);
 
             // Utilizar el modelo para hacer recomendaciones personalizadas
-            double edad = 45;
-            bool sexo = true;
-            double IMC = 30;
-            double cintura = 95;
-            bool medicacionPA = false;
-            bool actHipoglucemia = false;
-            bool actFisica = false;
-            bool consumoFrutasVerduras = true;
-            double antFamiliares = 2;
-            double puntosFindrisk = calcularPuntos();
+            double edad = paciente.Edad;//45;
+            bool sexo = paciente.Sexo;//true;
+            double IMC = calcularIMC();//30;
+            double cintura = paciente.Cintura;//95;
+            bool medicacionPA = paciente.MedicacionPA;//false;
+            bool actHipoglucemia = paciente.ActHipoglucemia;//false;
+            bool actFisica = paciente.ActFisica;//false;
+            bool consumoFrutasVerduras = paciente.ConsumoFYV;//true;
+            double antFamiliares = paciente.AntFamiliares;//2;
+            double puntosFindrisk = calcularPuntos();//15;
 
             var prediction = tree.Decide(new double[] { edad, sexo ? 1 : 0, IMC, cintura, medicacionPA ? 1 : 0, actHipoglucemia ? 1 : 0, actFisica ? 1 : 0, consumoFrutasVerduras ? 1 : 0, antFamiliares, puntosFindrisk });
             switch (prediction)
