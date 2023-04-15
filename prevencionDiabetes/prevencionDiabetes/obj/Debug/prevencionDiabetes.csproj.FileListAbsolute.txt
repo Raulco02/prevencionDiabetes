@@ -100,3 +100,17 @@ C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDia
 C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\Microsoft.Bcl.HashCode.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Buffers.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Memory.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\Microsoft.Bcl.HashCode.xml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Buffers.xml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Memory.xml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\bin\Debug\System.Threading.Tasks.Extensions.xml

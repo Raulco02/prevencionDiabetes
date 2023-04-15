@@ -1,4 +1,5 @@
-﻿using prevencionDiabetes.Persistencia;
+﻿using prevencionDiabetes.Dominio;
+using prevencionDiabetes.Persistencia;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -21,7 +22,7 @@ namespace prevencionDiabetes
     /// </summary>
     public partial class Login : Window
     {
-        public Agente agente;
+        UsuarioDAO usuarioDAO;
         public Login()
         {
             InitializeComponent();
@@ -36,10 +37,21 @@ namespace prevencionDiabetes
 
         private void btnIniciarSesion_Click(object sender, RoutedEventArgs e)
         {
-            if(string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContrasena.Password))
+            if(!string.IsNullOrEmpty(txtUsuario.Text) || !string.IsNullOrEmpty(txtContrasena.Password))
+            {
+                usuarioDAO = new UsuarioDAO();
+                if (usuarioDAO.Leer(txtUsuario.Text) != null)
+                {
+                    MainWindow ventana_formulario = new MainWindow();
+                    ventana_formulario.Show();
+                    this.Close();
+                }
+                lblError.Content = "No existe ese usuario";
+            } else
             {
                 lblError.Content = "Rellene todos los campos";
             }
+
         }
     }
 }

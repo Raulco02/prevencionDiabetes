@@ -59,9 +59,9 @@
         <Button x:Name="btnRegistrar" Grid.Column="2" Grid.Row="4"
             Content="Registrar" 
             HorizontalAlignment="Center"  VerticalAlignment="Top"
-            Margin="0,68,0,0" 
+            Margin="0,76,0,0" 
             FontSize="14" Foreground="White"
-            Width="345" Height="41" Cursor="Hand" Background="#FF7B95E6" Click="btnRegistrar_Click"/>
+            Width="345" Height="41" Cursor="Hand" Background="#FF7B95E6" Click="btnRegistrar_Click" FontWeight="Bold"/>
 
     </Grid>
 </Window>

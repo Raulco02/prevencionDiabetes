@@ -19,7 +19,7 @@ namespace prevencionDiabetes.Persistencia
         public Usuario Leer(string nombre_usuario)
         {
             Usuario usuario = null;
-            DataTable usuarioSet = agente.Leer($"SELECT * FROM usuarios WHERE nombre_usuario = {nombre_usuario}");
+            DataTable usuarioSet = agente.Leer("SELECT * FROM usuarios WHERE nombre_usuario = '" + nombre_usuario + "'");
             if (usuarioSet.Rows.Count > 0)
             {
                 DataRow fila = usuarioSet.Rows[0];
