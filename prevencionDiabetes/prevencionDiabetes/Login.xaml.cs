@@ -23,6 +23,7 @@ namespace prevencionDiabetes
     public partial class Login : Window
     {
         UsuarioDAO usuarioDAO;
+        public static string NombreDeUsuario { get; set; }
         public Login()
         {
             InitializeComponent();
@@ -42,6 +43,7 @@ namespace prevencionDiabetes
                 usuarioDAO = new UsuarioDAO();
                 if (usuarioDAO.Leer(txtUsuario.Text) != null)
                 {
+                    NombreDeUsuario = txtUsuario.Text;
                     MainWindow ventana_formulario = new MainWindow();
                     ventana_formulario.Show();
                     this.Close();

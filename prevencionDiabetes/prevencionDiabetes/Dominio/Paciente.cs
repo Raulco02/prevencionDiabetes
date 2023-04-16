@@ -8,6 +8,7 @@ namespace prevencionDiabetes.Dominio
 {
     public class Paciente : Usuario
     {
+        public int usuario_id { get; set; }
         public bool Sexo { get; set; } //True=Mujer, False=Hombre
         public int Edad { get; set; }
         public double Peso { get; set; }
@@ -18,13 +19,15 @@ namespace prevencionDiabetes.Dominio
         public bool ActFisica { get; set; }
         public bool ConsumoFYV { get; set; }
         public int AntFamiliares { get; set; }
-        public string Resultado { get; set; }
+        public int PuntosFindrisk { get; set; }
+        public int Resultado { get; set; }
 
+        // En la base de datos los booleanos hay que guardarlos como INTEGER (0=false, 1=true)
         public Paciente() { }
-        public Paciente(string id, string correo, string nombreUsuario, string contrasena,
+        public Paciente(string correo, string nombreUsuario, string contrasena, int usuario_id,
                         bool sexo, int edad, double peso, double altura, int cintura, bool medicacionPa,
-                        bool actHipoglucemia, bool actFisica, bool consumoFyv, int antFamiliares,
-                        string resultado)
+                        bool actHipoglucemia, bool actFisica, bool consumoFyv, int antFamiliares, int puntosFindrisk,
+                        int resultado)
                         : base(correo, nombreUsuario, contrasena)
         {
             Sexo = sexo;
@@ -38,6 +41,7 @@ namespace prevencionDiabetes.Dominio
             ConsumoFYV = consumoFyv;
             AntFamiliares = antFamiliares;
             Resultado = resultado;
+            PuntosFindrisk = puntosFindrisk;
         }
     }
 }

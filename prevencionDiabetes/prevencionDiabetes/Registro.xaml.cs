@@ -36,6 +36,7 @@ namespace prevencionDiabetes
                 usuarioDAO = new UsuarioDAO();
                 if (usuarioDAO.Leer(txtUsuario.Text) == null)
                 {
+                    Login.NombreDeUsuario = txtUsuario.Text;
                     usuarioDAO.Insertar(usuario);
                     MainWindow ventana_formulario = new MainWindow();
                     ventana_formulario.Show();

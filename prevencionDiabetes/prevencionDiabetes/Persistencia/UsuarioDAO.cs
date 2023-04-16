@@ -33,6 +33,19 @@ namespace prevencionDiabetes.Persistencia
             return usuario;
         }
 
+        public int LeerId(string nombre_usuario)
+        {
+            int id_usuario = 0;
+            DataTable usuarioSet = agente.Leer("SELECT id FROM usuarios WHERE nombre_usuario = '" + nombre_usuario + "';");
+            if (usuarioSet.Rows.Count > 0)
+            {
+                DataRow fila = usuarioSet.Rows[0];
+                id_usuario = Convert.ToInt32(fila["id"]);
+            }
+            return id_usuario;
+        }
+
+
         public List<Usuario> LeerTodos()
         {
             List<Usuario> usuarios = new List<Usuario>();

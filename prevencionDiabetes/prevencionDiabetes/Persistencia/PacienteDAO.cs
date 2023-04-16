@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 
 namespace prevencionDiabetes.Persistencia
 {
@@ -17,28 +18,27 @@ namespace prevencionDiabetes.Persistencia
             agente = Agente.ObtenerAgente();
         }
 
-        public Paciente Leer(string id_paciente)
+        public Paciente Leer(string correo_usuario)
         {
             Paciente paciente = null;
-            DataTable pacienteSet = agente.Leer($"SELECT * FROM pacientes WHERE id_usuario = {id_paciente}");
+            DataTable pacienteSet = agente.Leer("SELECT * FROM pacientes INNER JOIN usuarios ON usuarios.id = pacientes.usuario_id WHERE usuarios.correo = '" + correo_usuario + "';");
             if (pacienteSet.Rows.Count > 0)
             {
                 DataRow fila = pacienteSet.Rows[0];
                 paciente = new Paciente()
                 {
-                    Correo = fila["correo"].ToString(),
-                    Nombre_usuario = fila["nombre_usuario"].ToString(),
-                    Contrasena = fila["contrasena"].ToString(),
+                    usuario_id = Convert.ToInt32(fila["usuario_id"]),
                     Sexo = Convert.ToBoolean(fila["sexo"]),
                     Peso = Convert.ToDouble(fila["peso"]),
                     Altura = Convert.ToDouble(fila["altura"]),
                     Cintura = Convert.ToInt32(fila["cintura"]),
-                    MedicacionPA = Convert.ToBoolean(fila["medicacion_pa"]),
-                    ActHipoglucemia = Convert.ToBoolean(fila["act_hipoglucemia"]),
-                    ActFisica = Convert.ToBoolean(fila["act_fisica"]),
-                    ConsumoFYV = Convert.ToBoolean(fila["consumo_fyv"]),
-                    AntFamiliares = Convert.ToInt32(fila["ant_familiares"]),
-                    Resultado = fila["resultado"].ToString()
+                    MedicacionPA = Convert.ToBoolean(fila["medicacionPa"]),
+                    ActHipoglucemia = Convert.ToBoolean(fila["actHipoglucemia"]),
+                    ActFisica = Convert.ToBoolean(fila["actFisica"]),
+                    ConsumoFYV = Convert.ToBoolean(fila["consumoFyv"]),
+                    AntFamiliares = Convert.ToInt32(fila["antFamiliares"]),
+                    PuntosFindrisk= Convert.ToInt32(fila["puntosFindRisk"]),
+                    Resultado = Convert.ToInt32(fila["resultado"])
                 };
             }
             return paciente;
@@ -48,23 +48,21 @@ namespace prevencionDiabetes.Persistencia
         {
             List<Paciente> pacientes = new List<Paciente>();
             DataTable pacienteSet = agente.Leer("SELECT * FROM pacientes");
-            foreach (DataRow row in pacienteSet.Rows)
+            foreach (DataRow fila in pacienteSet.Rows)
             {
                 Paciente paciente = new Paciente();
-                paciente.Correo = row["correo"].ToString();
-                paciente.Nombre_usuario = row["nombre_usuario"].ToString();
-                paciente.Contrasena = row["contrasena"].ToString();
-                paciente.Sexo = Convert.ToBoolean(row["sexo"]);
-                paciente.Edad = Convert.ToInt32(row["edad"]);
-                paciente.Peso = Convert.ToDouble(row["peso"]);
-                paciente.Altura = Convert.ToDouble(row["altura"]);
-                paciente.Cintura = Convert.ToInt32(row["cintura"]);
-                paciente.MedicacionPA = Convert.ToBoolean(row["medicacion_pa"]);
-                paciente.ActHipoglucemia = Convert.ToBoolean(row["act_hipoglucemia"]);
-                paciente.ActFisica = Convert.ToBoolean(row["act_fisica"]);
-                paciente.ConsumoFYV = Convert.ToBoolean(row["consumo_fyv"]);
-                paciente.AntFamiliares = Convert.ToInt32(row["ant_familiares"]);
-                paciente.Resultado = row["resultado"].ToString();
+                paciente.usuario_id = Convert.ToInt32(fila["usuario_id"]);
+                paciente.Sexo = Convert.ToBoolean(fila["sexo"]);
+                paciente.Peso = Convert.ToDouble(fila["peso"]);
+                paciente.Altura = Convert.ToDouble(fila["altura"]);
+                paciente.Cintura = Convert.ToInt32(fila["cintura"]);
+                paciente.MedicacionPA = Convert.ToBoolean(fila["medicacionPa"]);
+                paciente.ActHipoglucemia = Convert.ToBoolean(fila["actHipoglucemia"]);
+                paciente.ActFisica = Convert.ToBoolean(fila["actFisica"]);
+                paciente.ConsumoFYV = Convert.ToBoolean(fila["consumoFyv"]);
+                paciente.AntFamiliares = Convert.ToInt32(fila["antFamiliares"]);
+                paciente.PuntosFindrisk = Convert.ToInt32(fila["puntosFindRisk"]);
+                paciente.Resultado = Convert.ToInt32(fila["resultado"]);
                 pacientes.Add(paciente);
             }
             return pacientes;
@@ -72,11 +70,11 @@ namespace prevencionDiabetes.Persistencia
 
         public bool Insertar(Paciente paciente)
         {
-            string consulta = "INSERT INTO pacientes (correo, nombre_usuario, contrasena, sexo, edad, peso, altura, cintura,  medicacion_pa, act_hipoglucemia, act_fisica, consumo_fyv, ant_familiares, resultado) " +
-                              "VALUES ('" + paciente.Correo + "', '" + paciente.Nombre_usuario + "', '" + paciente.Contrasena + "', " +
-                              (paciente.Sexo ? "1" : "0") + ", " + paciente.Edad + ", " + paciente.Peso + ", " + paciente.Altura + ", " + ", " + paciente.Cintura + ", " +
-                              (paciente.MedicacionPA ? "1" : "0") + ", " + (paciente.ActHipoglucemia ? "1" : "0") + ", " +
-                              (paciente.ActFisica ? "1" : "0") + ", " + (paciente.ConsumoFYV ? "1" : "0") + ", " + paciente.AntFamiliares + ", '" + paciente.Resultado + "')";
+            string consulta = "INSERT INTO pacientes (usuario_id, sexo, edad, peso, altura, cintura, medicacionPa, actHipoglucemia, actFisica, consumoFyv, antFamiliares, puntosFindRisk, resultado) " +
+                   "VALUES (" + paciente.usuario_id + ", " + (paciente.Sexo ? "1" : "0") + ", " + paciente.Edad + ", " + paciente.Peso + ", " + paciente.Altura + ", " + paciente.Cintura + ", " +
+                   (paciente.MedicacionPA ? "1" : "0") + ", " + (paciente.ActHipoglucemia ? "1" : "0") + ", " +
+                   (paciente.ActFisica ? "1" : "0") + ", " + (paciente.ConsumoFYV ? "1" : "0") + ", " + paciente.AntFamiliares + ", " + paciente.PuntosFindrisk + ", '" + paciente.Resultado + "')";
+
             return agente.Modificar(consulta);
         }
         /*public bool Modificar(Paciente paciente)
