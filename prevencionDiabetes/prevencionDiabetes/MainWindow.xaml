@@ -88,15 +88,15 @@
                 <ToggleButton x:Name="btnPadresAntecedentesDiabetes" Foreground="White" Background="#FF7B95E6" Content="Si                                +5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="150" FontWeight="Bold" Click="btnPadresAntecedentesDiabetes_Click"/>
             </StackPanel>
 
-            <Button x:Name="btnCalcular" Foreground="White" Background="#FF7B95E6" Grid.Column="2" Grid.Row="6" Content="Calcular" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="34" Width="78.5" FontWeight="Bold" Margin="2,2,10,2" Click="btnCalcular_Click"/>
+            <Button x:Name="btnCalcular" Foreground="White" Background="#FF7B95E6" Grid.Column="2" Grid.Row="5" Content="Calcular" HorizontalAlignment="Left" VerticalAlignment="Center" Height="34" Width="224" FontWeight="Bold" Margin="68,0,0,0" Click="btnCalcular_Click"/>
         </Grid>
         <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2">
             <Label Content="Puntuación:" Foreground="#FF625E84" Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="37" Width="128"/>
-            <TextBlock x:Name="tbPuntuacion" Grid.Row="1" Text="20" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="tbPuntuacion" Grid.Row="1" Text="" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2">
             <Label Content="Recomendación:" Foreground="#FF625E84" Grid.Row="2" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="37" Width="165"/>
-            <TextBlock x:Name="tbRecomendacion" Grid.Row="2" Text="20" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock x:Name="tbRecomendacion" Grid.Row="2" Text="" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Window>

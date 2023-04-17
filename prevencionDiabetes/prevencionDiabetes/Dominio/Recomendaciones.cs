@@ -11,13 +11,14 @@ using Accord.Statistics.Models.Regression;
 using System.IO;
 using System.Data;
 using Accord.Math;
+using System.Security.Cryptography.X509Certificates;
 
 namespace prevencionDiabetes.Dominio
 {
     public class Recomendaciones
     {
         public Recomendaciones()
-        {
+        {   /*
             // Crear un objeto CsvReader
             var csv = new CsvReader(new StreamReader("datos.csv"), hasHeaders: true, delimiter: ';');
 
@@ -50,27 +51,8 @@ namespace prevencionDiabetes.Dominio
             double antFamiliares = 2;
 
             var prediction = tree.Decide(new double[] { edad, sexo ? 1 : 0, IMC, cintura, medicacionPA ? 1 : 0, actHipoglucemia ? 1 : 0, actFisica ? 1 : 0, consumoFrutasVerduras ? 1 : 0, antFamiliares });
-            switch (prediction)
-            {
-                case 0:
-                    Console.WriteLine("Bajo riesgo de diabetes. Sigue manteniendo hábitos saludables.");
-                    break;
-                case 1:
-                    Console.WriteLine("Ligeramente elevado riesgo de diabetes. Se recomienda hacer cambios en el estilo de vida y visitar al médico.");
-                    break;
-                case 2:
-                    Console.WriteLine("Moderado riesgo de diabetes. Es importante hacer cambios inmediatos en el estilo de vida y visitar al médico.");
-                    break;
-                case 3:
-                    Console.WriteLine("Alto riesgo de diabetes. Es importante hacer cambios inmediatos en el estilo de vida y visitar al médico.");
-                    break;
-                case 4:
-                    Console.WriteLine("Muy alto riesgo de diabetes. Es importante hacer cambios inmediatos en el estilo de vida y visitar al médico.");
-                    break;
-                default:
-                    Console.WriteLine("Error al hacer la predicción.");
-                    break;
-            }
+            */
+
             /*
             // Cargar datos de entrenamiento
             var reader = new CsvReader("trainingData.csv", hasHeaders: true, delimiter: ',');
@@ -125,6 +107,24 @@ namespace prevencionDiabetes.Dominio
             }*/
         }
         
+        public string obtener_recomendacion(int recomendacion)
+        {
+            switch (recomendacion)
+            {
+                case 0:
+                    return "Bajo riesgo de diabetes. Sigue manteniendo hábitos saludables.";
+                case 1:
+                    return "Ligeramente elevado riesgo de diabetes. Se recomienda hacer cambios en el estilo de vida y visitar al médico.";
+                case 2:
+                    return "Moderado riesgo de diabetes. Es importante hacer cambios inmediatos en el estilo de vida y visitar al médico.";
+                case 3:
+                    return "Alto riesgo de diabetes. Es importante hacer cambios inmediatos en el estilo de vida y visitar al médico.";
+                case 4:
+                    return "Muy alto riesgo de diabetes. Es importante hacer cambios inmediatos en el estilo de vida y visitar al médico.";
+                default:
+                    return "Error al hacer la predicción.";
+            }
+        }
 
     }
 }

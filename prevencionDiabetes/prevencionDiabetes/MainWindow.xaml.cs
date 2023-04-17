@@ -163,12 +163,13 @@ namespace prevencionDiabetes
                 paciente.Altura = double.Parse(txtAltura.Text);
                 paciente.Cintura = int.Parse(txtCintura.Text);
                 CalculoFindrisk calculo = new CalculoFindrisk(paciente);
+                Recomendaciones recomendaciones = new Recomendaciones();
                 int puntos = calculo.calcularPuntos();
                 paciente.PuntosFindrisk = puntos;
                 int recomendacion = calculo.obtenerRecomendaciones();
-                paciente.Resultado= recomendacion;
+                paciente.Resultado = recomendacion;
                 tbPuntuacion.Text = puntos.ToString();
-                tbRecomendacion.Text = recomendacion.ToString();
+                tbRecomendacion.Text = recomendaciones.obtener_recomendacion(recomendacion);
                 //Faltaría poner las recomendaciones también
                 //Y de aquí habría que llamar a un método de paciente para escribir en la base de datos
 
