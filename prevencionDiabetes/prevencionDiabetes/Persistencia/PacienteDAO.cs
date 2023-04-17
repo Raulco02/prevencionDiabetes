@@ -29,6 +29,7 @@ namespace prevencionDiabetes.Persistencia
                 {
                     usuario_id = Convert.ToInt32(fila["usuario_id"]),
                     Sexo = Convert.ToBoolean(fila["sexo"]),
+                    Edad = Convert.ToInt32(fila["edad"]),
                     Peso = Convert.ToDouble(fila["peso"]),
                     Altura = Convert.ToDouble(fila["altura"]),
                     Cintura = Convert.ToInt32(fila["cintura"]),
@@ -53,6 +54,7 @@ namespace prevencionDiabetes.Persistencia
                 Paciente paciente = new Paciente();
                 paciente.usuario_id = Convert.ToInt32(fila["usuario_id"]);
                 paciente.Sexo = Convert.ToBoolean(fila["sexo"]);
+                paciente.Edad = Convert.ToInt32(fila["edad"]);
                 paciente.Peso = Convert.ToDouble(fila["peso"]);
                 paciente.Altura = Convert.ToDouble(fila["altura"]);
                 paciente.Cintura = Convert.ToInt32(fila["cintura"]);
@@ -77,28 +79,26 @@ namespace prevencionDiabetes.Persistencia
 
             return agente.Modificar(consulta);
         }
-        /*public bool Modificar(Paciente paciente)
+        public bool Modificar(Paciente paciente)
         {
             string consulta = "UPDATE pacientes SET " +
-                          "correo = '" + paciente.Correo + "', " +
-                          "nombre_usuario = '" + paciente.Nombre_usuario + "', " +
-                          "contrasena = '" + paciente.Contrasena + "', " +
                           "sexo = " + (paciente.Sexo ? "1" : "0") + ", " +
                           "edad = " + paciente.Edad + ", " +
                           "peso = " + paciente.Peso + ", " +
                           "altura = " + paciente.Altura + ", " +
                           "cintura = " + paciente.Cintura + ", " +
-                          "medicacion_pa = " + (paciente.MedicacionPA ? "1" : "0") + ", " +
-                          "act_hipoglucemia = " + (paciente.ActHipoglucemia ? "1" : "0") + ", " +
-                          "act_fisica = " + (paciente.ActFisica ? "1" : "0") + ", " +
-                          "consumo_fyv = " + (paciente.ConsumoFYV ? "1" : "0") + ", " +
-                          "ant_familiares = " + paciente.AntFamiliares + ", " +
-                          "resultado = '" + paciente.Resultado + "'" +
-                          "WHERE id = " + paciente.Id; //Por qué atributo buscamos?
+                          "medicacionPa = " + (paciente.MedicacionPA ? "1" : "0") + ", " +
+                          "actHipoglucemia = " + (paciente.ActHipoglucemia ? "1" : "0") + ", " +
+                          "actFisica = " + (paciente.ActFisica ? "1" : "0") + ", " +
+                          "consumoFyv = " + (paciente.ConsumoFYV ? "1" : "0") + ", " +
+                          "antFamiliares = " + paciente.AntFamiliares + ", " +
+                          "puntosFindRisk = " + paciente.PuntosFindrisk + ", " +
+                          "resultado = '" + paciente.Resultado + "' " +
+                          "WHERE usuario_id = " + paciente.usuario_id;
 
             return agente.Modificar(consulta);
         }
-        
+        /*
         public bool Eliminar(Paciente paciente)
         {
             string consulta = "DELETE FROM pacientes WHERE id = " + paciente.Id; //Por qué atributo buscamos?

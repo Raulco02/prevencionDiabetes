@@ -41,7 +41,7 @@ namespace prevencionDiabetes.Persistencia
         public bool Modificar(string consulta)
         {
             bool resultado = false;
-            if (Conectar()) { 
+            if (this.Conectar()) { 
                 SQLiteCommand comando = new SQLiteCommand(consulta, conexion);
                 int filasAfectadas = comando.ExecuteNonQuery();
                 resultado = filasAfectadas > 0;

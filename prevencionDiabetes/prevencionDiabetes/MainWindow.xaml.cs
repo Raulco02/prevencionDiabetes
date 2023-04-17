@@ -25,12 +25,58 @@ namespace prevencionDiabetes
         Paciente paciente; //Debería llegar un usuario o un paciente por parte de la ventana de inicio de sesión
         PacienteDAO pacienteDAO;
         UsuarioDAO usuarioDAO;
+        bool pacienteExistente;
         public MainWindow()
         {
             InitializeComponent();
             paciente = new Paciente();
+            pacienteExistente = false;
+        }
+        public MainWindow(string correo)
+        {
+            InitializeComponent();
+            paciente = new Paciente();
+            pacienteDAO = new PacienteDAO();
+            pacienteExistente = true;
+            cargarDatosPaciente(correo);
         }
 
+        private void cargarDatosPaciente(string correo)
+        {
+            this.paciente = pacienteDAO.Leer(correo);
+
+            if(paciente.Sexo == true) btnSexoMujer.IsChecked = true;
+            else btnSexoHombre.IsChecked = true;
+
+            if(paciente.Edad < 45) btnEdadMenos45.IsChecked = true;
+            else if (paciente.Edad >= 45 && paciente.Edad <= 54) btnEdadEntre45y54.IsChecked = true;
+            else if (paciente.Edad >= 55 && paciente.Edad <= 64) btnEdadEntre55y64.IsChecked = true;
+            else btnEdadMas65.IsChecked = true;
+
+            if(paciente.ActFisica == true) btnActividadFisicaMas4h.IsChecked = true;
+            else btnActividadFisicaMenos4h.IsChecked = true;
+
+            if(paciente.ConsumoFYV == true) btnSiConsumoFrutas.IsChecked = true;
+            else btnNoConsumoFrutas.IsChecked = true;
+
+            if (paciente.AntFamiliares == 0) btnNoAntecedentesDiabetes.IsChecked = true;
+            else if (paciente.AntFamiliares == 1) btnPadresAntecedentesDiabetes.IsChecked = true; 
+            else btnPrimosAntecedentesDiabetes.IsChecked = true;
+
+            if(paciente.ActHipoglucemia == true) btnAntecedentesHiperglucemiaSi.IsChecked = true;
+            else btnAntecedentesHiperglucemiaNo.IsChecked = true;
+
+            if(paciente.MedicacionPA == true) btnMedicacionArterialSi.IsChecked = true;
+            else btnMedicacionArterialNo.IsChecked = true;
+
+            txtPeso.Text = paciente.Peso.ToString();
+            txtAltura.Text = paciente.Altura.ToString();
+            txtCintura.Text = paciente.Cintura.ToString();
+
+            tbPuntuacion.Text = paciente.PuntosFindrisk.ToString();
+            Recomendaciones recomendaciones= new Recomendaciones();
+            tbRecomendacion.Text = recomendaciones.obtener_recomendacion(paciente.Resultado);
+        }
         private void btnSexoHombre_Click(object sender, RoutedEventArgs e)
         {
             btnSexoMujer.IsChecked = false;
@@ -147,7 +193,6 @@ namespace prevencionDiabetes
         private void btnCalcular_Click(object sender, RoutedEventArgs e)
         {
             //Si ningún atributo de paciente es nulo(es decir, se ha clicado un botón por opción), y los textboxes están escritos correctamente
-            //Me dice que los atributos nunca son null, ¿cómo comprobar?
             if ((btnSexoHombre.IsChecked == true || btnSexoMujer.IsChecked == true) &&
                 (btnEdadMenos45.IsChecked == true || btnEdadEntre45y54.IsChecked == true ||
                 btnEdadEntre55y64.IsChecked == true || btnEdadMas65.IsChecked == true) &&
@@ -170,13 +215,20 @@ namespace prevencionDiabetes
                 paciente.Resultado = recomendacion;
                 tbPuntuacion.Text = puntos.ToString();
                 tbRecomendacion.Text = recomendaciones.obtener_recomendacion(recomendacion);
-                //Faltaría poner las recomendaciones también
-                //Y de aquí habría que llamar a un método de paciente para escribir en la base de datos
 
                 pacienteDAO = new PacienteDAO();
                 usuarioDAO = new UsuarioDAO();
-                paciente.usuario_id = usuarioDAO.LeerId(Login.NombreDeUsuario);
-                pacienteDAO.Insertar(paciente);
+
+                if (!pacienteExistente)
+                {
+                    paciente.usuario_id = usuarioDAO.LeerId(Login.NombreDeUsuario);
+                    pacienteDAO.Insertar(paciente);
+                    pacienteExistente = true;
+                }
+                else
+                {
+                    pacienteDAO.Modificar(paciente);
+                }
             }
         }
         private void aceptarDouble(object sender, TextCompositionEventArgs e)

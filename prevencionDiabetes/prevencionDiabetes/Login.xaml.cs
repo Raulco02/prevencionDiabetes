@@ -45,11 +45,11 @@ namespace prevencionDiabetes
                 if (usuario_bbdd != null && usuario_bbdd.Contrasena == txtContrasena.Password)
                 {
                     NombreDeUsuario = txtUsuario.Text;
-                    MainWindow ventana_formulario = new MainWindow();
+                    MainWindow ventana_formulario = new MainWindow(usuario_bbdd.Correo);
                     ventana_formulario.Show();
                     this.Close();
                 }
-                lblError.Content = "No existe ese usuario";
+                lblError.Content = "Usuario o contraseña incorrectos";
             } else
             {
                 lblError.Content = "Rellene todos los campos";
