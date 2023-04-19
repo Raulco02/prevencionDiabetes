@@ -8,6 +8,7 @@ namespace prevencionDiabetes.Dominio
 {
     public class Paciente : Usuario
     {
+        public int id { get; set; }
         public int usuario_id { get; set; }
         public bool Sexo { get; set; } //True=Mujer, False=Hombre
         public int Edad { get; set; }

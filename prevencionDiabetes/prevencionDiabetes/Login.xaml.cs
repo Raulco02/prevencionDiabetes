@@ -45,7 +45,8 @@ namespace prevencionDiabetes
                 if (usuario_bbdd != null && usuario_bbdd.Contrasena == txtContrasena.Password)
                 {
                     NombreDeUsuario = txtUsuario.Text;
-                    MainWindow ventana_formulario = new MainWindow(usuario_bbdd.Correo);
+                    int id = usuarioDAO.LeerId(NombreDeUsuario);
+                    MainWindow ventana_formulario = new MainWindow(id);
                     ventana_formulario.Show();
                     this.Close();
                 }

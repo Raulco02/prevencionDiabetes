@@ -25,25 +25,22 @@ namespace prevencionDiabetes
         Paciente paciente; //Debería llegar un usuario o un paciente por parte de la ventana de inicio de sesión
         PacienteDAO pacienteDAO;
         UsuarioDAO usuarioDAO;
-        bool pacienteExistente;
         public MainWindow()
         {
             InitializeComponent();
             paciente = new Paciente();
-            pacienteExistente = false;
         }
-        public MainWindow(string correo)
+        public MainWindow(int id)
         {
             InitializeComponent();
             paciente = new Paciente();
             pacienteDAO = new PacienteDAO();
-            pacienteExistente = true;
-            cargarDatosPaciente(correo);
+            cargarDatosPaciente(id);
         }
 
-        private void cargarDatosPaciente(string correo)
+        private void cargarDatosPaciente(int id)
         {
-            this.paciente = pacienteDAO.Leer(correo);
+            paciente = pacienteDAO.LeerUltimo(id);
 
             if(paciente.Sexo == true) btnSexoMujer.IsChecked = true;
             else btnSexoHombre.IsChecked = true;
@@ -60,8 +57,8 @@ namespace prevencionDiabetes
             else btnNoConsumoFrutas.IsChecked = true;
 
             if (paciente.AntFamiliares == 0) btnNoAntecedentesDiabetes.IsChecked = true;
-            else if (paciente.AntFamiliares == 1) btnPadresAntecedentesDiabetes.IsChecked = true; 
-            else btnPrimosAntecedentesDiabetes.IsChecked = true;
+            else if (paciente.AntFamiliares == 1) btnPrimosAntecedentesDiabetes.IsChecked = true; 
+            else btnPadresAntecedentesDiabetes.IsChecked = true;
 
             if(paciente.ActHipoglucemia == true) btnAntecedentesHiperglucemiaSi.IsChecked = true;
             else btnAntecedentesHiperglucemiaNo.IsChecked = true;
@@ -219,16 +216,8 @@ namespace prevencionDiabetes
                 pacienteDAO = new PacienteDAO();
                 usuarioDAO = new UsuarioDAO();
 
-                if (!pacienteExistente)
-                {
-                    paciente.usuario_id = usuarioDAO.LeerId(Login.NombreDeUsuario);
-                    pacienteDAO.Insertar(paciente);
-                    pacienteExistente = true;
-                }
-                else
-                {
-                    pacienteDAO.Modificar(paciente);
-                }
+                paciente.usuario_id = usuarioDAO.LeerId(Login.NombreDeUsuario);
+                pacienteDAO.Insertar(paciente);                
             }
         }
         private void aceptarDouble(object sender, TextCompositionEventArgs e)
@@ -260,6 +249,13 @@ namespace prevencionDiabetes
         private void txtCintura_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             aceptarInt(sender, e);
+        }
+
+        private void btnHistorial_Click(object sender, RoutedEventArgs e)
+        {
+            List<Paciente> pacientes = pacienteDAO.LeerTodos(paciente.usuario_id);
+            Historial historial = new Historial(pacientes);
+            historial.Show();
         }
     }
 }

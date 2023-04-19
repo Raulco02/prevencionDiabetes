@@ -172,3 +172,5 @@ C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab 2\prevencionDiabetes\prevencionD
 C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab 2\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.csproj.CopyComplete
 C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab 2\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.exe
 C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab 2\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.pdb
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab 2\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\Historial.g.cs
+C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab 2\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\Historial.baml

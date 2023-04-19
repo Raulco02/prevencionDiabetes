@@ -89,6 +89,7 @@
             </StackPanel>
 
             <Button x:Name="btnCalcular" Foreground="White" Background="#FF7B95E6" Grid.Column="2" Grid.Row="5" Content="Calcular" HorizontalAlignment="Left" VerticalAlignment="Center" Height="34" Width="224" FontWeight="Bold" Margin="68,0,0,0" Click="btnCalcular_Click"/>
+            <Button x:Name="btnHistorial" Foreground="White" Background="#FF7B95E6" Grid.Column="2" Grid.Row="6" Content="Historial" HorizontalAlignment="Left" VerticalAlignment="Center" Height="34" Width="224" FontWeight="Bold" Margin="68,0,0,0" Click="btnHistorial_Click"/>
         </Grid>
         <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2">
             <Label Content="Puntuación:" Foreground="#FF625E84" Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="37" Width="128"/>
