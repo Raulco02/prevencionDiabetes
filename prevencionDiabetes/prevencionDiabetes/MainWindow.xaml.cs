@@ -253,9 +253,16 @@ namespace prevencionDiabetes
 
         private void btnHistorial_Click(object sender, RoutedEventArgs e)
         {
-            List<Paciente> pacientes = pacienteDAO.LeerTodos(paciente.usuario_id);
-            Historial historial = new Historial(pacientes);
-            historial.Show();
+            try
+            {
+                List<Paciente> pacientes = pacienteDAO.LeerTodos(paciente.usuario_id);
+                Historial historial = new Historial(pacientes);
+                historial.Show();
+            }
+            catch(NullReferenceException ex) 
+            {
+                MessageBox.Show("No tienes historial.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

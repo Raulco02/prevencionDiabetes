@@ -29,14 +29,21 @@ namespace prevencionDiabetes
         }
         public void darResumen(List<Paciente> pacientes)
         {
-            if (pacientes[0].PuntosFindrisk < pacientes[pacientes.Count-1].PuntosFindrisk)
-                tbResumen.Text = "Has mejorado tu puntuación respecto a la medida inicial. Continúa introduciendo buenos hábitos en tu día a día.";
-            else
-                if (pacientes[0].PuntosFindrisk > 14)
+            if (pacientes.Count > 1)
+            {
+                if (pacientes[0].PuntosFindrisk < pacientes[pacientes.Count - 1].PuntosFindrisk)
+                    tbResumen.Text = "Has mejorado tu puntuación respecto a la medida inicial. Continúa introduciendo buenos hábitos en tu día a día.";
+                else
+                                if (pacientes[0].PuntosFindrisk > 14)
                     tbResumen.Text = "Tu puntuación respecto a la medida inicial ha empeorado. Visita al médico. Come fruta y verdura, realiza actividad física y mantén buenos hábitos.";
                 else
                     tbResumen.Text = "Tu puntuación respecto a la medida inicial ha empeorado. Come fruta y verdura, realiza actividad física y mantén buenos hábitos.";
-
+            }
+            else
+            {
+                RowDefinition rowDefinition = miGrid.RowDefinitions[1];
+                rowDefinition.Height = new GridLength(0);
+            }
         }
     }
 }
