@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:prevencionDiabetes"
         mc:Ignorable="d"
-        Title="Historial" ResizeMode="NoResize" Height="470" Width="800">
+        Title="Historial" ResizeMode="NoResize" Height="470" Width="1201">
     <Window.Resources>
         <Style TargetType="Label" x:Key="sexoStyle">
             <Style.Triggers>
                 <DataTrigger Binding="{Binding Sexo}" Value="True">
-                    <Setter Property="Content" Value="Sí" />
+                    <Setter Property="Content" Value="Mujer" />
                 </DataTrigger>
                 <DataTrigger Binding="{Binding Sexo}" Value="False">
-                    <Setter Property="Content" Value="No" />
+                    <Setter Property="Content" Value="Hombre" />
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -70,12 +70,27 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
+        <Style TargetType="Label" x:Key="resultadoStyle">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Resultado}" Value="0">
+                    <Setter Property="Content" Value="Bajo riesgo de diabetes. Sigue manteniendo hábitos saludables." />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Resultado}" Value="1">
+                    <Setter Property="Content" Value="Ligeramente elevado riesgo de diabetes. Se recomienda hacer cambios en el estilo de vida y mantener una alimentación saludable." />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Resultado}" Value="2">
+                    <Setter Property="Content" Value="Moderado riesgo de diabetes. Es importante hacer cambios inmediatos en el estilo de vida, realiza ejercicio físico, mantén una dieta equilibrada y evita el consumo de alcohol y tabaco." />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Resultado}" Value="3">
+                    <Setter Property="Content" Value="Alto riesgo de diabetes. Realiza ejercicio físico, mantén una dieta equilibrada, evita el consumo de alcohol y tabaco, visita al médico y realiza controles periódicos de glucemia." />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Resultado}" Value="4">
+                    <Setter Property="Content" Value="Muy alto riesgo de diabetes. Es muy importante que visites al médico, mantengas una dieta equilibrada, realices actividad física, evites alcohol y tabaco y que realices controles de glucemia frecuentes." />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
         <DataTemplate x:Key="TemplatePaciente">
             <StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Label Content="ID: "/>
-                    <Label Content="{Binding usuario_id}"/>
-                </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="Sexo: "/>
                     <Label Style="{StaticResource sexoStyle}"/>
@@ -118,7 +133,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="Recomendación: "/>
-                    <Label Content="{Binding Resultado}"/>
+                    <Label Style="{StaticResource resultadoStyle}"/>
                 </StackPanel>
             </StackPanel>
         </DataTemplate>
@@ -133,7 +148,7 @@
         </ScrollViewer>
         <StackPanel Grid.Row="1" Orientation="Horizontal">
             <Label Content="Resumen:" Foreground="#FF625E84" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="37" Width="100"/>
-            <TextBlock x:Name="tbResumen" Text="aaaaaa" Height="37" Width="Auto"  FontSize="20" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap"/>
+            <TextBlock x:Name="tbResumen" Text="Tu puntuación respecto ha empeorado.Visita al médico. Mejora alimentación, realiza actividad física y mantén buenos hábitos." Height="55" Width="1098"  FontSize="20" Margin="0,5,0,0" VerticalAlignment="Top" TextWrapping="Wrap"/>
         </StackPanel>
     </Grid>
 </Window>

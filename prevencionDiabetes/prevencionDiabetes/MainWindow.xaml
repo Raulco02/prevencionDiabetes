@@ -46,7 +46,7 @@
                                padecen diabetes es la Diabetes de Tipo 2. En nuestra aplicación intentamos evitar este tipo de diabetes y para ello hemos creado un formulario 
                                
                                para conseguir esto." VerticalAlignment="Top"/>
-                    <Label Content="Para más información visite https://fedesp.es/diabetes/" HorizontalAlignment="Left" Margin="20,402,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Para más información visite https://fedesp.es/diabetes/" HorizontalAlignment="Left" Margin="45,0,0,0" VerticalAlignment="Bottom"/>
                 </Grid>
             </TabItem>
 
