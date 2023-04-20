@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:prevencionDiabetes"
         mc:Ignorable="d"
-        Title="Historial" Height="450" Width="800">
+        Title="Historial" ResizeMode="NoResize" Height="470" Width="800">
     <Window.Resources>
         <Style TargetType="Label" x:Key="sexoStyle">
             <Style.Triggers>

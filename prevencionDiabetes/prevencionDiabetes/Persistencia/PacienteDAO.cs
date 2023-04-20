@@ -73,7 +73,7 @@ namespace prevencionDiabetes.Persistencia
             return paciente;
         }
 
-        public List<Paciente> LeerTodos(int id_usuario)
+        public List<Paciente> LeerConsultas(int id_usuario)
         {
             List<Paciente> pacientes = new List<Paciente>();
             DataTable pacienteSet = agente.Leer("SELECT * FROM pacientes WHERE usuario_id = '" + id_usuario + "' ORDER BY id DESC;");

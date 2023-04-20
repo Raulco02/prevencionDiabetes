@@ -22,7 +22,7 @@ namespace prevencionDiabetes
     /// </summary>
     public partial class MainWindow : Window
     {
-        Paciente paciente; //Debería llegar un usuario o un paciente por parte de la ventana de inicio de sesión
+        Paciente paciente;
         PacienteDAO pacienteDAO;
         UsuarioDAO usuarioDAO;
         public MainWindow()
@@ -33,15 +33,20 @@ namespace prevencionDiabetes
         public MainWindow(int id)
         {
             InitializeComponent();
-            paciente = new Paciente();
             pacienteDAO = new PacienteDAO();
-            cargarDatosPaciente(id);
+            paciente = pacienteDAO.LeerUltimo(id);
+            if (paciente != null)
+            {
+                cargarDatosPaciente(id);
+            } else
+            {
+                paciente = new Paciente();
+                btnUltimosResultados.IsEnabled = false;
+            }
         }
 
         private void cargarDatosPaciente(int id)
         {
-            paciente = pacienteDAO.LeerUltimo(id);
-
             if(paciente.Sexo == true) btnSexoMujer.IsChecked = true;
             else btnSexoHombre.IsChecked = true;
 
@@ -217,7 +222,8 @@ namespace prevencionDiabetes
                 usuarioDAO = new UsuarioDAO();
 
                 paciente.usuario_id = usuarioDAO.LeerId(Login.NombreDeUsuario);
-                pacienteDAO.Insertar(paciente);                
+                pacienteDAO.Insertar(paciente);
+                btnUltimosResultados.IsEnabled = true;
             }
         }
         private void aceptarDouble(object sender, TextCompositionEventArgs e)
@@ -251,18 +257,18 @@ namespace prevencionDiabetes
             aceptarInt(sender, e);
         }
 
-        private void btnHistorial_Click(object sender, RoutedEventArgs e)
+        private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                List<Paciente> pacientes = pacienteDAO.LeerTodos(paciente.usuario_id);
-                Historial historial = new Historial(pacientes);
-                historial.Show();
-            }
-            catch(NullReferenceException ex) 
-            {
-                MessageBox.Show("No tienes historial.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            Login ventana_login = new Login();
+            ventana_login.Show();
+            this.Close();
+        }
+
+        private void btnUltimosResultados_Click(object sender, RoutedEventArgs e)
+        {
+            List<Paciente> pacientes = pacienteDAO.LeerConsultas(paciente.usuario_id);
+            Historial historial = new Historial(pacientes);
+            historial.Show();
         }
     }
 }

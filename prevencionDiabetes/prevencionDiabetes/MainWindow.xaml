@@ -5,99 +5,154 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:prevencionDiabetes"
         mc:Ignorable="d"
-        Title="MainWindow" ResizeMode="NoResize" Height="483" Width="1051">
+        Title="MainWindow" ResizeMode="NoResize" Height="500" Width="1201">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="120*"/>
-            <RowDefinition Height="15*"/>
-            <RowDefinition Height="30*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="30*"/>
-                <ColumnDefinition Width="30*"/>
-                <ColumnDefinition Width="30*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30*"/>
-                <RowDefinition Height="30*"/>
-                <RowDefinition Height="30*"/>
-                <RowDefinition Height="30*"/>
-                <RowDefinition Height="30*"/>
-                <RowDefinition Height="30*"/>
-                <RowDefinition Height="30*"/>
-            </Grid.RowDefinitions>
-            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="2">
-                <Label Content="Sexo" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="34" Width="35"/>
-                <ToggleButton x:Name="btnSexoHombre" Content="Hombre" HorizontalAlignment="Right" Foreground="White" Background="#FF7B95E6" VerticalAlignment="Bottom" Height="34" Width="78.5" FontWeight="Bold" Click="btnSexoHombre_Click"/>
-                <ToggleButton x:Name="btnSexoMujer" Content="Mujer" HorizontalAlignment="Right"  Foreground="White" Background="#FF7B95E6" VerticalAlignment="Bottom" Height="34" Width="78.5" FontWeight="Bold" Click="btnSexoMujer_Click"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,11,0,0">
-                <Label Content="Edad" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="36"/>
-                <ToggleButton x:Name="btnEdadMenos45" Grid.Row="1" Grid.Column="0" Foreground="White" Background="#FF7B95E6" Content="&lt;45                               0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="34" Width="158" FontWeight="Bold" Click="btnEdadMenos45_Click"/>
-            </StackPanel>
-            <ToggleButton x:Name="btnEdadEntre45y54" Grid.Row="2" Grid.Column="0" Foreground="White" Background="#FF7B95E6" Content="45-54                          +2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="34" Width="158" FontWeight="Bold" Click="btnEdadEntre45y54_Click"/>
-            <ToggleButton x:Name="btnEdadEntre55y64" Grid.Row="3" Grid.Column="0" Foreground="White" Background="#FF7B95E6" Content="55-64                         +3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="34" Width="158" FontWeight="Bold" Click="btnEdadEntre55y64_Click"/>
-            <ToggleButton x:Name="btnEdadMas65" Grid.Row="4" Grid.Column="0" Foreground="White" Background="#FF7B95E6" Content="&gt;64                            +4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="34" Width="158" FontWeight="Bold" Click="btnEdadMas65_Click"/>
-            <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="2">
-                <Label Content="Actividad física" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" Height="26" Width="89"/>
-                <ToggleButton x:Name="btnActividadFisicaMas4h" Foreground="White" Background="#FF7B95E6" Content="&gt;=4h/sem  0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="78.5" FontWeight="Bold" Click="btnActividadFisicaMas4h_Click"/>
-                <ToggleButton x:Name="btnActividadFisicaMenos4h" Foreground="White" Background="#FF7B95E6" Content="&lt;4h/sem  +2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="78.5" FontWeight="Bold" Click="btnActividadFisicaMenos4h_Click"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="2">
-                <Label Content="Consumo diario de frutas/verduras" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center" Height="26" Width="193"/>
-                <ToggleButton x:Name="btnNoConsumoFrutas" Foreground="White" Background="#FF7B95E6" Content="No        +2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="78.5" FontWeight="Bold" Click="btnNoConsumoFrutas_Click"/>
-                <ToggleButton x:Name="btnSiConsumoFrutas" Foreground="White" Background="#FF7B95E6" Content="Si          0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="78.5" FontWeight="Bold" Click="btnSiConsumoFrutas_Click"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2">
-                <Label Content="Peso:" Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Right" VerticalAlignment="Center" Height="26" Width="50"/>
-                <TextBox x:Name="txtPeso" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Width="158" Height="26" PreviewTextInput="txtPeso_PreviewTextInput"/>
-                <Label Content="kg" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="26"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2">
-                <Label Content="Altura:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" VerticalAlignment="Top" Height="26" Width="50"/>
-                <TextBox x:Name="txtAltura" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Height="26" PreviewTextInput="txtAltura_PreviewTextInput" />
-                <Label Content="cm" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="26"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2">
-                <Label Content="Cintura:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" VerticalAlignment="Top" Height="26" Width="50"/>
-                <TextBox x:Name="txtCintura" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Height="26" PreviewTextInput="txtCintura_PreviewTextInput"/>
-                <Label Content="cm" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="26"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="2">
-                <Label Content="Antecedentes de hiperglucemia" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="178"/>
-                <ToggleButton x:Name="btnAntecedentesHiperglucemiaNo" Foreground="White" Background="#FF7B95E6" Content="No         0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="76" FontWeight="Bold" Click="btnAntecedentesHiperglucemiaNo_Click"/>
-                <ToggleButton x:Name="btnAntecedentesHiperglucemiaSi" Foreground="White" Background="#FF7B95E6" Content="Si        +2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="76" FontWeight="Bold" Click="btnAntecedentesHiperglucemiaSi_Click"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="2">
-                <Label Content="Medicación presión arterial" HorizontalAlignment="Left" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Height="26" Width="154"/>
-                <ToggleButton x:Name="btnMedicacionArterialNo" Foreground="White" Background="#FF7B95E6" Content="No         0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="76" FontWeight="Bold" Click="btnMedicacionArterialNo_Click"/>
-                <ToggleButton x:Name="btnMedicacionArterialSi" Foreground="White" Background="#FF7B95E6" Content="Si        +2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="76" FontWeight="Bold" Click="btnMedicacionArterialSi_Click"/>
-            </StackPanel>
-            <Label Content="Antecedentes familiares de diabetes" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Height="26" Width="201"/>
-            <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="195"/>
-                <ToggleButton x:Name="btnNoAntecedentesDiabetes" Foreground="White" Background="#FF7B95E6" Content="No                                  0" Height="34" Width="150" FontWeight="Bold" Click="btnNoAntecedentesDiabetes_Click"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Label Content="Abuelos, tíos o primos" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalAlignment="Center" Height="26" Width="195"/>
-                <ToggleButton x:Name="btnPrimosAntecedentesDiabetes" Foreground="White" Background="#FF7B95E6" Content="Si                                +3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="150" FontWeight="Bold" Click="btnPrimosAntecedentesDiabetes_Click"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Label Content="Padres o hermanos" HorizontalAlignment="Left" HorizontalContentAlignment="Right" VerticalAlignment="Center" Height="26" Width="195"/>
-                <ToggleButton x:Name="btnPadresAntecedentesDiabetes" Foreground="White" Background="#FF7B95E6" Content="Si                                +5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="150" FontWeight="Bold" Click="btnPadresAntecedentesDiabetes_Click"/>
-            </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="179*"/>
 
-            <Button x:Name="btnCalcular" Foreground="White" Background="#FF7B95E6" Grid.Column="2" Grid.Row="5" Content="Calcular" HorizontalAlignment="Left" VerticalAlignment="Center" Height="34" Width="224" FontWeight="Bold" Margin="68,0,0,0" Click="btnCalcular_Click"/>
-            <Button x:Name="btnHistorial" Foreground="White" Background="#FF7B95E6" Grid.Column="2" Grid.Row="6" Content="Historial" HorizontalAlignment="Left" VerticalAlignment="Center" Height="34" Width="224" FontWeight="Bold" Margin="68,0,0,0" Click="btnHistorial_Click"/>
-        </Grid>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2">
-            <Label Content="Puntuación:" Foreground="#FF625E84" Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="37" Width="128"/>
-            <TextBlock x:Name="tbPuntuacion" Grid.Row="1" Text="" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2">
-            <Label Content="Recomendación:" Foreground="#FF625E84" Grid.Row="2" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="37" Width="165"/>
-            <TextBlock x:Name="tbRecomendacion" Grid.Row="2" Text="" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </StackPanel>
+            <ColumnDefinition Width="1022*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Último acceso" HorizontalAlignment="Left" Margin="12,291,0,0" VerticalAlignment="Top" FontFamily="Verdana" Height="25" Width="94"/>
+        <Button x:Name="btnCerrarSesion" Content="Cerrar sesión" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Verdana" Height="34" Width="106" Margin="0,410,0,0" Background="#FF7B95E6" FontWeight="Bold" Foreground="White" BorderBrush="#FF7B95E6" Click="btnCerrarSesion_Click"/>
+        <Label x:Name="lblAcceso" Content="" HorizontalAlignment="Center" VerticalAlignment="Top" Height="26" Width="156" FontWeight="Bold" Margin="0,321,0,0"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="12,0,0,0" VerticalAlignment="Center" Height="26" Width="46"/>
+        <Label x:Name="lblEmail" Content="" HorizontalAlignment="Center" VerticalAlignment="Top" Height="26" Width="156" Margin="0,252,0,0" FontWeight="Bold"/>
+        <Label Content="Usuario" HorizontalAlignment="Left" Margin="12,154,0,0" VerticalAlignment="Top" Height="26" Width="54"/>
+        <Label x:Name="lblNombre" Content="" HorizontalAlignment="Center" Margin="0,185,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="26" Width="156"/>
+        <TabControl Grid.Column="1" HorizontalAlignment="Center" Margin="0,0,0,10" Width="1002">
+            <TabItem Header="Home">
+                <Grid>
+                    <Label Content="¡Bienvenido/a a FindRisk! " HorizontalAlignment="Left" Margin="20,29,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+                    <Label Content="¿Qué es la diabetes?" HorizontalAlignment="Left" Margin="48,84,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="48,120,0,0" TextWrapping="Wrap" Text="La diabetes es una enfermedad crónica que afecta a millones de personas en todo el mundo. Si bien es cierto que la diabetes puede ser controlada, 
+                     
+                               también es cierto que no se puede curar, y si no se trata adecuadamente puede tener consecuencias graves para la salud." VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="48,170,0,0" TextWrapping="Wrap" Text="La diabetes es una enfermedad en la que el cuerpo no produce suficiente insulina o no la utiliza adecuadamente. La insulina es una hormona que se 
+                               
+                               encarga de regular el nivel de azúcar en la sangre. Cuando hay demasiada azúcar en la sangre, puede causar daño a los órganos y tejidos del cuerpo,
+                               
+                               como los ojos, los riñones, los nervios y el corazón." VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="48,239,0,0" TextWrapping="Wrap" Text="Las personas con diabetes deben controlar cuidadosamente sus niveles de azúcar en la sangre, ya sea mediante dieta y ejercicio, medicamentos,
+                               
+                               insulina o una combinación de estos métodos. Es importante hacerse controles médicos regulares y seguir las indicaciones del médico para
+                               
+                               prevenir complicaciones." VerticalAlignment="Top"/>
+                    <Label Content="¿Qué vas a encontrar?" HorizontalAlignment="Left" Margin="48,313,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="48,349,0,0" TextWrapping="Wrap" Text="Existen tres tipos de diabetes (de tipo 1, 2 y diabetes gestacional), bueno pues la más común y la que padece entre el 90-95% de las personas que 
+                               
+                               padecen diabetes es la Diabetes de Tipo 2. En nuestra aplicación intentamos evitar este tipo de diabetes y para ello hemos creado un formulario 
+                               
+                               para conseguir esto." VerticalAlignment="Top"/>
+                    <Label Content="Para más información visite https://fedesp.es/diabetes/" HorizontalAlignment="Left" Margin="20,402,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Formulario">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="120*"/>
+                        <RowDefinition Height="15*"/>
+                        <RowDefinition Height="30*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="30*"/>
+                            <ColumnDefinition Width="30*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30*"/>
+                            <RowDefinition Height="30*"/>
+                            <RowDefinition Height="30*"/>
+                            <RowDefinition Height="30*"/>
+                            <RowDefinition Height="30*"/>
+                            <RowDefinition Height="30*"/>
+                            <RowDefinition Height="30*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right" Margin="2">
+                            <Label Content="Sexo" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="34" Width="35"/>
+                            <ToggleButton x:Name="btnSexoHombre" Content="Hombre" HorizontalAlignment="Right" Foreground="White" Background="#FF7B95E6" VerticalAlignment="Bottom" Height="34" Width="78.5" FontWeight="Bold" Click="btnSexoHombre_Click"/>
+                            <ToggleButton x:Name="btnSexoMujer" Content="Mujer" HorizontalAlignment="Right"  Foreground="White" Background="#FF7B95E6" VerticalAlignment="Bottom" Height="34" Width="78.5" FontWeight="Bold" Click="btnSexoMujer_Click"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="0,11,0,0">
+                            <Label Content="Edad" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="36"/>
+                            <ToggleButton x:Name="btnEdadMenos45" Grid.Row="1" Grid.Column="0" Foreground="White" Background="#FF7B95E6" Content="&lt;45                               0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="34" Width="158" FontWeight="Bold" Click="btnEdadMenos45_Click"/>
+                        </StackPanel>
+                        <ToggleButton x:Name="btnEdadEntre45y54" Grid.Row="2" Grid.Column="0" Foreground="White" Background="#FF7B95E6" Content="45-54                          +2" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="34" Width="158" FontWeight="Bold" Click="btnEdadEntre45y54_Click"/>
+                        <ToggleButton x:Name="btnEdadEntre55y64" Grid.Row="3" Grid.Column="0" Foreground="White" Background="#FF7B95E6" Content="55-64                         +3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="34" Width="158" FontWeight="Bold" Click="btnEdadEntre55y64_Click"/>
+                        <ToggleButton x:Name="btnEdadMas65" Grid.Row="4" Grid.Column="0" Foreground="White" Background="#FF7B95E6" Content="&gt;64                            +4" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="34" Width="158" FontWeight="Bold" Click="btnEdadMas65_Click"/>
+                        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="2">
+                            <Label Content="Actividad física" HorizontalAlignment="Right" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" Height="26" Width="89"/>
+                            <ToggleButton x:Name="btnActividadFisicaMas4h" Foreground="White" Background="#FF7B95E6" Content="&gt;=4h/sem  0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="78.5" FontWeight="Bold" Click="btnActividadFisicaMas4h_Click"/>
+                            <ToggleButton x:Name="btnActividadFisicaMenos4h" Foreground="White" Background="#FF7B95E6" Content="&lt;4h/sem  +2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="78.5" FontWeight="Bold" Click="btnActividadFisicaMenos4h_Click"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="2">
+                            <Label Content="Consumo diario de frutas/verduras" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" Height="26" Width="177" FontSize="11"/>
+                            <ToggleButton x:Name="btnNoConsumoFrutas" Foreground="White" Background="#FF7B95E6" Content="No        +2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="78.5" FontWeight="Bold" Click="btnNoConsumoFrutas_Click"/>
+                            <ToggleButton x:Name="btnSiConsumoFrutas" Foreground="White" Background="#FF7B95E6" Content="Si          0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="78.5" FontWeight="Bold" Click="btnSiConsumoFrutas_Click"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2">
+                            <Label Content="Peso:" Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Right" VerticalAlignment="Center" Height="26" Width="50"/>
+                            <TextBox x:Name="txtPeso" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Center" Width="158" Height="26" PreviewTextInput="txtPeso_PreviewTextInput"/>
+                            <Label Content="kg" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="26"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2">
+                            <Label Content="Altura:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" VerticalAlignment="Top" Height="26" Width="50"/>
+                            <TextBox x:Name="txtAltura" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Height="26" PreviewTextInput="txtAltura_PreviewTextInput" />
+                            <Label Content="cm" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="26"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2">
+                            <Label Content="Cintura:" HorizontalAlignment="Left" HorizontalContentAlignment="Right" VerticalAlignment="Top" Height="26" Width="50"/>
+                            <TextBox x:Name="txtCintura" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Height="26" PreviewTextInput="txtCintura_PreviewTextInput"/>
+                            <Label Content="cm" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="26"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="2">
+                            <Label Content="Antecedentes de hiperglucemia" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="178"/>
+                            <ToggleButton x:Name="btnAntecedentesHiperglucemiaNo" Foreground="White" Background="#FF7B95E6" Content="No         0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="76" FontWeight="Bold" Click="btnAntecedentesHiperglucemiaNo_Click"/>
+                            <ToggleButton x:Name="btnAntecedentesHiperglucemiaSi" Foreground="White" Background="#FF7B95E6" Content="Si        +2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="76" FontWeight="Bold" Click="btnAntecedentesHiperglucemiaSi_Click"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="2">
+                            <Label Content="Medicación presión arterial" HorizontalAlignment="Left" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Height="26" Width="154"/>
+                            <ToggleButton x:Name="btnMedicacionArterialNo" Foreground="White" Background="#FF7B95E6" Content="No         0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="76" FontWeight="Bold" Click="btnMedicacionArterialNo_Click"/>
+                            <ToggleButton x:Name="btnMedicacionArterialSi" Foreground="White" Background="#FF7B95E6" Content="Si        +2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="76" FontWeight="Bold" Click="btnMedicacionArterialSi_Click"/>
+                        </StackPanel>
+                        <Label Content="Antecedentes familiares de diabetes" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Height="26" Width="201"/>
+                        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" Height="26" Width="195"/>
+                            <ToggleButton x:Name="btnNoAntecedentesDiabetes" Foreground="White" Background="#FF7B95E6" Content="No                                0" Height="34" Width="137" FontWeight="Bold" Click="btnNoAntecedentesDiabetes_Click"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Label Content="Abuelos, tíos o primos" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalAlignment="Center" Height="26" Width="195"/>
+                            <ToggleButton x:Name="btnPrimosAntecedentesDiabetes" Foreground="White" Background="#FF7B95E6" Content="Si                                +3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="34" Width="137" FontWeight="Bold" Click="btnPrimosAntecedentesDiabetes_Click"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <Label Content="Padres o hermanos" HorizontalAlignment="Left" HorizontalContentAlignment="Right" VerticalAlignment="Center" Height="26" Width="195"/>
+                            <ToggleButton x:Name="btnPadresAntecedentesDiabetes" Foreground="White" Background="#FF7B95E6" Content="Si                                +5" VerticalAlignment="Top" Height="34" Width="137" FontWeight="Bold" Click="btnPadresAntecedentesDiabetes_Click"/>
+                        </StackPanel>
+
+                        <Button x:Name="btnCalcular" Foreground="White" Background="#FF7B95E6" Grid.Column="2" Grid.Row="5" Content="Calcular" HorizontalAlignment="Center" VerticalAlignment="Top" Height="34" Width="224" FontWeight="Bold" Click="btnCalcular_Click"/>
+                        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="54,39,0,0" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Text="*Si ya ha realizado alguna consulta le saldrán
+                                   
+                                   los resultados de la última consulta.
+                                   
+                                   Si lo desea, puede cambiar alguno de los valores." Grid.RowSpan="2" FontSize="10"/>
+                    </Grid>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2">
+                        <Label Content="Puntuación:" Foreground="#FF625E84" FontSize="20" FontWeight="Bold" Height="37" Width="128"/>
+                        <TextBlock x:Name="tbPuntuacion" Grid.Row="1" Text="" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2">
+                        <Label Content="Recomendación:" Foreground="#FF625E84" Grid.Row="2" HorizontalAlignment="Left"  VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="37" Width="165"/>
+                        <TextBlock x:Name="tbRecomendacion" Grid.Row="2" Text="" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+        <Image x:Name="imgUsuario" HorizontalAlignment="Left" Height="126" Margin="25,10,0,0" VerticalAlignment="Top" Width="136" Source="perfil.jpg"/>
+        <Button x:Name="btnUltimosResultados" Content="Ver últimas consultas" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Verdana" Height="34" Width="156" Margin="0,364,0,0" Background="#FF7B95E6" FontWeight="Bold" Foreground="White" BorderBrush="#FF7B95E6" Click="btnUltimosResultados_Click"/>
     </Grid>
 </Window>

@@ -24,9 +24,13 @@ namespace prevencionDiabetes
     {
         UsuarioDAO usuarioDAO;
         public static string NombreDeUsuario { get; set; }
+        private string acceso;
+        private static readonly DateTime ultimo_acceso = DateTime.Now;
         public Login()
         {
             InitializeComponent();
+
+            acceso = ultimo_acceso.ToString();
         }
 
         private void Label_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -44,13 +48,17 @@ namespace prevencionDiabetes
                 Usuario usuario_bbdd = usuarioDAO.Leer(txtUsuario.Text);
                 if (usuario_bbdd != null && usuario_bbdd.Contrasena == txtContrasena.Password)
                 {
-                    NombreDeUsuario = txtUsuario.Text;
+                    NombreDeUsuario = usuario_bbdd.Nombre_usuario;
                     int id = usuarioDAO.LeerId(NombreDeUsuario);
+                    
                     MainWindow ventana_formulario = new MainWindow(id);
+                    ventana_formulario.lblNombre.Content = NombreDeUsuario;
+                    ventana_formulario.lblAcceso.Content = acceso;
+                    ventana_formulario.lblEmail.Content = usuario_bbdd.Correo;
                     ventana_formulario.Show();
                     this.Close();
                 }
-                lblError.Content = "Usuario o contraseña incorrectos";
+                lblError.Content = "Ese usuario no existe";
             } else
             {
                 lblError.Content = "Rellene todos los campos";

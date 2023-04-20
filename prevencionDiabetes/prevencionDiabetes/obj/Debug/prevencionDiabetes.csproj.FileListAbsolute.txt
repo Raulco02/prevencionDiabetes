@@ -174,3 +174,5 @@ C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab 2\prevencionDiabetes\prevencionD
 C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab 2\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\prevencionDiabetes.pdb
 C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab 2\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\Historial.g.cs
 C:\Users\Usuario\Desktop\Apuntes\Gestion SI\Lab 2\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\Historial.baml
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\Historial.g.cs
+C:\Users\pedri\OneDrive\Escritorio\prevencionDiabetes\prevencionDiabetes\prevencionDiabetes\obj\Debug\Historial.baml
